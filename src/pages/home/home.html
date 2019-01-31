@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      MEMORY-GAME
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<p>Nombre de paires : {{ numberOfRevealedCards }}</p>
+    <ion-grid>
+    <ion-row>
+      <ion-col >
+          <img src = "assets/imgs/homer.jpg" class = "homer">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <!--Insertion de la boucle-->
+      <ion-col col-4 *ngFor="let card of cardDeck; let pos=index">
+        <img [src]="card.activeImage" class = "card"(click)= "pickCard(card, pos)">
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
